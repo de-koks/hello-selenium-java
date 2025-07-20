@@ -28,11 +28,8 @@ public class SeleniumGettingStartedTest {
                         By.xpath("//li[@class='DocSearch-Hit']")
                 ));
 
-        Assert.assertFalse(searchSuggestions.isEmpty());
-    }
+        Assert.assertFalse(searchSuggestions.isEmpty(), "No search suggestions after 'getting started' input.");
 
-    @Test
-    public void searchSuggestionNavigatesToGettingStartedUrl() {
-
+        driver.quit();
     }
 }
