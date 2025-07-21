@@ -19,6 +19,7 @@ public class SearchSuggestionsTest {
     @BeforeMethod (alwaysRun = true)
     public void browserSetup() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @AfterMethod (alwaysRun = true)

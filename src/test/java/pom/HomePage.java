@@ -14,8 +14,7 @@ public class HomePage {
     private static final String HOMEPAGE_URL = "https://www.selenium.dev";
     private WebDriver driver;
 
-    private WebElement openSearchButton = driver.findElement(By.className("DocSearch"));
-    private WebElement searchInput = driver.findElement(By.className("DocSearch-Input"));
+    
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -27,8 +26,12 @@ public class HomePage {
     }
 
     public HomePage enterSearchQuery(String query) {
+        WebElement openSearchButton = driver.findElement(By.className("DocSearch"));
         openSearchButton.click();
+
+        WebElement searchInput = driver.findElement(By.className("DocSearch-Input"));
         searchInput.sendKeys(query);
+        
         return this;
     }
 
