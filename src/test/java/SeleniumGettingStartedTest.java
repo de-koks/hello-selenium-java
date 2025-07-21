@@ -37,11 +37,14 @@ public class SeleniumGettingStartedTest {
         WebElement searchInput = driver.findElement(By.className("DocSearch-Input"));
         searchInput.sendKeys("getting started");
 
-        List<WebElement> searchSuggestions = new WebDriverWait(driver, Duration.ofSeconds(3)).
+        List<WebElement> searchSuggestions = new WebDriverWait(
+            driver, Duration.ofSeconds(3)).
                 until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                         By.xpath("//li[@class='DocSearch-Hit']")
-                ));
+                )
+            );
 
-        Assert.assertFalse(searchSuggestions.isEmpty(), "No search suggestions after 'getting started' input.");
+        Assert.assertFalse(searchSuggestions.isEmpty(),
+         "No search suggestions after 'getting started' input.");
     }
 }
